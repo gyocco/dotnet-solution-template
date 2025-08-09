@@ -1,0 +1,37 @@
+@baseUrl = http://localhost:5277/api
+@controller = Demos
+@id = 1
+@sampleBody = { "name": "Sample Demo" }
+
+### Get Demo by ID
+GET {{baseUrl}}/{{controller}}/{{id}}
+
+### Get All Demos
+GET {{baseUrl}}/{{controller}}
+
+### Search Demos
+POST {{baseUrl}}/{{controller}}/search
+Content-Type: application/json
+
+{
+  "query": "Demo",
+  "orderBy": "name",
+  "orderByDescending": false,
+  "pageNumber": 1,
+  "pageSize": 10
+}
+
+### Create Demo
+POST {{baseUrl}}/{{controller}}
+Content-Type: application/json
+
+{{sampleBody}}
+
+### Update Demo
+PUT {{baseUrl}}/{{controller}}/{{id}}
+Content-Type: application/json
+
+{{sampleBody}}
+
+### Delete Demo
+DELETE {{baseUrl}}/{{controller}}/{{id}}

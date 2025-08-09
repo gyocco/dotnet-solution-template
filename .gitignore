@@ -1,0 +1,100 @@
+# .NET / Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.userprefs
+
+# Build results
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+[Bb]uild/
+[Bb]ld/
+
+# Test results
+TestResults/
+TestResult*/
+*.coverage
+*.coveragexml
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# NuGet
+packages/
+*.nupkg
+*.snupkg
+.nuget/
+**/packages/*
+!**/packages/build/
+!**/packages/repositories.config
+
+# Publish outputs
+[Pp]ublish/
+[Dst]/
+**/Properties/PublishProfiles/*.pubxml.user
+
+# Cache/Generated
+*_i.c
+*_p.c
+*_h.h
+*.ilk
+*.meta
+*.obj
+*.pch
+*.pdb
+*.pgc
+*.pgd
+*.rsp
+*.sbr
+*.tlb
+*.tli
+*.tlh
+*.tmp
+*.tmp_proj
+*.vspscc
+*.vssscc
+*.vshost.exe*
+*.cache
+*.svclog
+*.pidb
+*.scc
+
+# IDEs
+.idea/
+.ReSharper*/
+*_ReSharper*/
+*.DotSettings.user
+
+# VS Code
+.vscode/
+.history/
+
+# Databases
+*.mdf
+*.ldf
+*.ndf
+*.dbmdl
+*.sqlite
+*.sqlite3
+
+# OS files
+.DS_Store
+Thumbs.db
+$RECYCLE.BIN/
+
+# Environment files
+.env
+.env.*
