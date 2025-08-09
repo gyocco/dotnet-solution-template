@@ -43,7 +43,7 @@ packages/
 
 # Publish outputs
 [Pp]ublish/
-[Dst]/
+[Dd]ist/
 **/Properties/PublishProfiles/*.pubxml.user
 
 # Cache/Generated
