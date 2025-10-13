@@ -22,9 +22,9 @@ applications/
     appsettings.Development.json
 libraries/
   DemoProject.Domain/
-    Entities/
-      DemoEntity.cs
-      OptionEntity.cs
+    Tables/
+      DemoTable.cs
+      OptionTable.cs
     Exceptions/
       NotFoundException.cs
       UnauthorizedException.cs

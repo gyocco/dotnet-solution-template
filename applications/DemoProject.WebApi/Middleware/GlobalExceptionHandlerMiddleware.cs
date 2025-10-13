@@ -1,4 +1,4 @@
-using DemoProject.Domain.Exceptions;
+using DemoProject.Services.Shared.Exceptions;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 using System.Text.Json;
@@ -32,7 +32,7 @@ public class GlobalExceptionHandlerMiddleware
     private static async Task HandleExceptionAsync(HttpContext context, Exception exception)
     {
         var problemDetails = CreateProblemDetails(exception, context);
-        
+
         context.Response.ContentType = "application/problem+json";
         context.Response.StatusCode = problemDetails.Status ?? (int)HttpStatusCode.InternalServerError;
 
@@ -66,7 +66,7 @@ public class GlobalExceptionHandlerMiddleware
                 Detail = unauthorizedEx.Message,
                 Instance = context.Request.Path
             },
-            DemoProject.Domain.Exceptions.ValidationException validationEx => new ProblemDetails
+            ValidationException validationEx => new ProblemDetails
             {
                 Type = "https://tools.ietf.org/html/rfc7231#section-6.5.1",
                 Title = "Validation Error",

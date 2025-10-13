@@ -1,8 +1,9 @@
-using DemoProject.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using DemoProject.Services;
-using DemoProject.Infrastructure;
 using DemoProject.WebApi.Middleware;
+using DemoProject.Data.Implementation;
+using DemoProject.Data.Implementation.DbContext;
+using DemoProject.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,8 +16,9 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"),
         b => b.MigrationsAssembly("DemoProject.Infrastructure")));
 
-builder.Services.AddServiceDependencies();
-builder.Services.AddInfrastructureDependencies();
+builder.Services.AddInfrastructureServices();
+builder.Services.AddRepositoryServices();
+builder.Services.AddApplicationServices();
 
 builder.Services.AddControllers();
 builder.Services.AddProblemDetails();

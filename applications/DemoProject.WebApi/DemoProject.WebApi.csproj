@@ -16,7 +16,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\libraries\DemoProject.Infrastructure\DemoProject.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\libraries\services\DemoProject.Services\DemoProject.Services.csproj" />
+    <ProjectReference Include="..\..\libraries\common\DemoProject.Data.Implementation\DemoProject.Data.Implementation.csproj" />
+    <ProjectReference Include="..\..\libraries\common\DemoProject.Infrastructure\DemoProject.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

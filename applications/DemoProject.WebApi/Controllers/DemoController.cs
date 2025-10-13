@@ -1,6 +1,6 @@
-using DemoProject.Services.Demo;
-using DemoProject.Services.Demo.Requests;
-using DemoProject.Services.Demo.Responses;
+using DemoProject.Services.Modules.Demo;
+using DemoProject.Services.Modules.Demo.Requests;
+using DemoProject.Services.Modules.Demo.Responses;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DemoProject.WebApi.Controllers;

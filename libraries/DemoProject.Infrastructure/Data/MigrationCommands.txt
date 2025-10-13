@@ -1,9 +1,0 @@
- Must be run in DemoProject.Infrastructure: cd .\libraries\DemoProject.Infrastructure\
- 
-- Generate migration from TableConfiguration changes:
-
- dotnet ef migrations add <MigrationName> --context ApplicationDbContext --output-dir Data/Migrations --startup-project ../../applications/DemoProject.WebApi
-
-- Update Database (Run migrations)
-
- dotnet ef database update --context ApplicationDbContext --startup-project ../../applications/DemoProject.WebApi
