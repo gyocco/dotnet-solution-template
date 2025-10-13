@@ -2,7 +2,7 @@ using DemoProject.Data.Repository.Base.Models;
 
 namespace DemoProject.Data.Repository.Base;
 
-public interface IRepositoryWithSearch<TEntity, TKey> : IRepository<TEntity, TKey> where TEntity : class
+public interface IRepositoryWithSearch<TEntity, TKey, TSearchFilters> : IRepository<TEntity, TKey> where TEntity : class
 {
-    Task<SearchResponse<TEntity>> Search<TFilters>(SearchRequest<TFilters> request);
+    Task<SearchResponse<TEntity>> Search(SearchRequest<TSearchFilters> request);
 }

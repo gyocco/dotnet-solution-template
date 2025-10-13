@@ -59,7 +59,8 @@ public class DemoService : IDemoService
 
     public async Task<SearchDemosResponse> SearchDemos(SearchDemosRequest request)
     {
-        var searchRequest = request.Adapt<SearchRequest<SearchDemoFilters>>();
+        var searchRequest = request.Adapt<SearchRequest<DemoSearchFilters>>();
+        searchRequest.Filters = request.Filters.Adapt<DemoSearchFilters>();
         var searchResult = await _demoRepository.Search(searchRequest);
         var demoResponses = searchResult.Items.Adapt<List<Responses.Demo>>();
 

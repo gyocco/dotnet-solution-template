@@ -7,10 +7,10 @@ using System.Reflection;
 
 namespace DemoProject.Data.Implementation.Repository.Base;
 
-public class BaseRepositoryWithSearch<TEntity, TKey>(ApplicationDbContext context) : BaseRepository<TEntity, TKey>(context), IRepositoryWithSearch<TEntity, TKey>
+public class BaseRepositoryWithSearch<TEntity, TKey, TFilters>(ApplicationDbContext context) : BaseRepository<TEntity, TKey>(context), IRepositoryWithSearch<TEntity, TKey, TFilters>
     where TEntity : class
 {
-    public virtual async Task<SearchResponse<TEntity>> Search<TFilters>(SearchRequest<TFilters> request)
+    public virtual async Task<SearchResponse<TEntity>> Search(SearchRequest<TFilters> request)
     {
         var query = _dbSet.AsQueryable();
 
@@ -24,9 +24,9 @@ public class BaseRepositoryWithSearch<TEntity, TKey>(ApplicationDbContext contex
         var totalCount = await query.CountAsync();
 
         // Apply ordering
-        if (!string.IsNullOrWhiteSpace(request.OrderByColumn))
+        if (!string.IsNullOrWhiteSpace(request.OrderBy))
         {
-            query = ApplyOrdering(query, request.OrderByColumn, request.OrderDescending);
+            query = ApplyOrdering(query, request.OrderBy, request.OrderByDescending);
         }
 
         // Apply pagination
@@ -44,7 +44,7 @@ public class BaseRepositoryWithSearch<TEntity, TKey>(ApplicationDbContext contex
         };
     }
 
-    protected virtual IQueryable<TEntity> ApplyFilters<TFilters>(IQueryable<TEntity> query, TFilters filters)
+    protected virtual IQueryable<TEntity> ApplyFilters(IQueryable<TEntity> query, TFilters filters)
     {
         // This is a base implementation that can be overridden in derived classes
         // for entity-specific filtering logic

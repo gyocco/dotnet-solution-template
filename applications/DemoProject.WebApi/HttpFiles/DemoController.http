@@ -14,9 +14,9 @@ POST {{baseUrl}}/{{controller}}/search
 Content-Type: application/json
 
 {
-  "query": "Demo",
-  "orderBy": "name",
-  "orderByDescending": false,
+  "name": "Demo",
+  "orderBy": "DemoId",
+  "orderByDescending": true,
   "pageNumber": 1,
   "pageSize": 10
 }
